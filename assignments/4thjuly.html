@@ -1,0 +1,113 @@
+1.What are the three ways to apply CSS to an HTML document?
+the three ways are inline,internal,external.
+inline by using style tag within element eg <p style="color:antiquewhite">example</p>
+internal by using classes,id,and element name means using selector and writing them under
+style tag under hea tag
+external we link external css stylesheet in the html code in th ehead tag using link tag
+
+2.How do you link an external CSS file to an HTML page?
+eg
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+3.Where should you place the <style> tag in an HTML file?
+under head tag .
+
+4.What is the difference between inline and internal CSS?
+inline style attribute is used inside the element and in internal we use <style> tag inside
+    head section adn there we use css selector to style elements of the html page.
+
+5.Which CSS implementation has the highest specificity: inline, internal, or external?
+inline>internal>external
+
+
+6.How do you select an element with a specific ID in CSS?
+#id_name{
+    css code
+}
+
+7.Write a CSS rule to apply red color to all <p> elements.
+    <style>
+    p{
+        color:red;
+    }
+    </style>
+
+8.Write a CSS rule to apply background color to a class named .card.
+<style> .card{
+    background-color:red;
+}</style>
+
+9.What is the difference between .title and #title selectors?
+. selector is class and applied to many #is id selector usd to uniquely identify the eelement means applied to one elemnt only
+
+10.Which selector has more specificity: class or ID?
+id has
+
+
+11.Write a CSS rule to give a solid red border of 2px to a div.
+give class to div as abc now use .abc{ 
+    border:2px solid red;
+} in style tag under head section
+
+
+12.How do you remove the border from an input element?
+<input type="text" style="border: none;">
+
+25.Apply a different border to each side of a box using CSS.
+.box{
+    width:50px ; height : 50px
+   
+}
+
+13.What does the shorthand border: 1px dashed blue; mean?
+it means th eboarder of 1 px width dashed typ lines as border blue in color 
+
+14.Can we use border on inline elements? What happens?
+yes we can apply border to inline element like<i> <a> <span></span></a></i><strong></strong>
+
+
+15.How do you make a square div appear circular using border-radius?
+by making its border-radius:50px;
+
+16.What will border-radius: 10px 20px 30px 40px; do?
+they will curve the top by 10 px,left by 20 px ,right by 30 px and bottom by 40px
+
+17.Write CSS to round only the top-left and bottom-right corners.
+.box{
+    border-top-left-radius:50px;
+    border-bottom-right-radius:50px;
+}
+
+18.Can border-radius be applied to images?
+yes, we can apply border radius to image by using element selector img in style tag and also using div we can apply border -radius to image
+
+19.What happens if you apply border-radius to an 
+the outline will follow the shape of element after it has been applied with border radius ie the outline will also get appllied th e border radius
+
+
+20.What’s the difference between margin and padding?
+margin is the space surrounding outside th eborders and padding is the space surrounding content and it isinside border
+
+21.How do you apply equal margin on all sides?
+by using margin:value;
+
+22.What will margin: 10px 20px; do?
+gives the margin of 10px on top and botome and margin of 20 px on lft ad right side
+
+23.How can you center a block element horizontally using margin?
+/* by using margin-left:50%; */
+
+
+24.What is margin collapse? Give an example.
+when te margins of two divs eg bottom margin of 50px aand top margin of another div eg 20 px come together they dont add up but become one margin of greater pixels out of two.
+eg,
+<div class="f" style="margin-bottom: 40px;"></div>
+<div class="g" style="margin-top: 30px;"></div>
+then if these come toegther on a screen these will together have a top=bottom margin of 40 px
+
+
+ 
+
