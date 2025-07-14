@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" c</div>ontent="width=device-width, initial-scale=1.0"/>
+  <title>Social Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 30px;
+      height:250px;
+    }
+
+    .card {
+      width: 250px;
+      border: 1px solid black;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .card i {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Specific Styles */
+    .twitter i {
+      color: #000;
+    }
+
+    .twitter .btn {
+      background-color: black;
+      color: white;
+    }
+
+    .instagram {
+      background-color: #e1306c;
+      color: white;
+      border: none;
+    }
+
+    .instagram .btn {
+      background-color: white;
+      color: #e1306c;
+    }
+
+    .youtube i {
+      color: #000;
+    }
+
+    .youtube .btn {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="card-container">
+
+    <div class="card twitter">
+      <i class="fab fa-twitter"></i>
+      <h2>TWITTER</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi?</p>
+      <button class="btn">READ MORE</button>
+    </div>
+
+    <div class="card instagram">
+      <i class="fab fa-instagram"></i>
+      <h2>INSTAGRAM</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi?</p>
+      <button class="btn">READ MORE</button>
+    </div>
+
+    <div class="card youtube">
+      <i class="fab fa-youtube"></i>
+      <h2>YOUTUBE</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi?</p>
+      <button class="btn">READ MORE</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
