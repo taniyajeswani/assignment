@@ -27,11 +27,22 @@ console.log(result);
 // 2. **Check Palindrome**  
 //    Write a function `isPalindrome(str)` to check if a string is a palindrome (case-insensitive).  
 //    Example: `"Madam" → true`
-
+function isPalindrome(str) {
+    const normalized = str.toLowerCase();
+    const reversed = normalized.split('').reverse().join('');
+    return normalized === reversed;
+}
+// Example usage:
+// console.log(isPalindrome("Madam")); // true
 
 // 3. **Count Vowels**  
 //    Write a function `countVowels(str)` to count the number of vowels in the given string.  
 //    Example: `"JavaScript" → 3`
+function countVowels(str) {
+    return (str.match(/[aeiou]/gi) || []).length;
+}
+// Example usage:
+// console.log(countVowels("JavaScript")); // 3
 
 
 // 4. **Capitalize First Letter of Each Word**  
@@ -48,25 +59,57 @@ function capitalizeWord(str){
 // 5. **Character Frequency**  
 //    Write a function `charFrequency(str)` that returns an object with the frequency of each character in the string.  
 //    Example: `"aabbbc" → { a: 2, b: 3, c: 1 }`
+function charFrequency(str) {
+    const freq = {};
+    for (let char of str) {
+        freq[char] = (freq[char] || 0) + 1;
+    }
+    return freq;
+}
+// Example usage:
+// console.log(charFrequency("aabbbc")); // { a: 2, b: 3, c: 1 }
 
 // 🧠 ARRAY QUESTIONS (5)
 
 // 1. **Remove Duplicates**  
-//    Write a function `removeDuplicates(arr)` that removes duplicate values from an array.  
-//    Example: `[1, 2, 2, 3, 4, 4] → [1, 2, 3, 4]`
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+// Example usage:
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4])); // [1, 2, 3, 4]
 
 // 2. **Flatten an Array**  
-//    Write a function `flattenArray(arr)` to flatten a nested array (1 level deep).  
-//    Example: `[[1, 2], [3, 4], [5]] → [1, 2, 3, 4, 5]`
+function flattenArray(arr) {
+    return arr.flat();
+}
+// Example usage:
+// console.log(flattenArray([[1, 2], [3, 4], [5]])); // [1, 2, 3, 4, 5]
 
 // 3. **Find Max and Min**  
-//    Write a function `findMaxMin(arr)` that returns the maximum and minimum number in an array.  
-//    Example: `[4, 1, 9, -2] → { max: 9, min: -2 }`
+function findMaxMin(arr) {
+    return {
+        max: Math.max(...arr),
+        min: Math.min(...arr)
+    };
+}
+// Example usage:
+// console.log(findMaxMin([4, 1, 9, -2])); // { max: 9, min: -2 }
 
 // 4. **Sum of Even Numbers**  
-//    Write a function `sumEven(arr)` that returns the sum of all even numbers in the array.  
-//    Example: `[1, 2, 3, 4, 5, 6] → 12`
+function sumEven(arr) {
+    return arr.filter(x => x % 2 === 0).reduce((sum, x) => sum + x, 0);
+}
+// Example usage:
+// console.log(sumEven([1, 2, 3, 4, 5, 6])); // 12
 
 // 5. **Group by Type**  
-//    Write a function `groupByType(arr)` that groups array elements by their type.  
-//    Example: `[1, 'a', true, 2, 'b'] → { number: [1, 2], string: ['a', 'b'], boolean: [true] }`
+function groupByType(arr) {
+    return arr.reduce((acc, val) => {
+        const type = typeof val;
+        if (!acc[type]) acc[type] = [];
+        acc[type].push(val);
+        return acc;
+    }, {});
+}
+// Example usage:
+// console.log(groupByType([1, 'a', true, 2, 'b'])); // { number: [1, 2], string: ['a', 'b'], boolean: [true] }

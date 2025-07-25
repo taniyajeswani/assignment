@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+ <div class="container">
+
+        
+    <div class="image"></div>
+
+
+
+        <div class="displayer" >
+
+            <div class="search">
+                <div class="inputbox">
+                  <form>
+                    <label style=" text-align: center; border:2px solid rgb(25, 14, 245);background-color: rgb(186, 182, 168) ;margin-left:10px;margin: 5px;padding: 5px;font-weight: 300;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Search box</label>
+                   <input placeholder="Enter the name of country/city" type="text" id="searchbox">
+                   </form>
+                </div>
+
+                <div>
+                  <button id="icon" >
+                    <i class="fa-solid fa-magnifying-glass"style="color: #0b3784;">
+                    </i>
+                  </button>
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <div id="city">city:</div>
+                
+               <div id="temp">Temperature:</div> 
+                
+                <p id="weather">weather condition:</p>
+                <p id="humidity"> humidity:</p>
+                <p id="speed"> wind speed:</p>
+                <div id="weather-icon"> weather icon:</p>
+        
+                
+            </div>
+
+        </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- 🌤️ Weather App Project: Fetch & Display Weather from OpenWeather API
+📌 Objective:
+Build a simple weather app that fetches real-time weather data from the OpenWeatherMap API and displays it to the user in a clean and user-friendly interface.
+
+📋 Assignment Instructions:
+1. Sign Up for OpenWeatherMap API
+Go to https://openweathermap.org/api
+
+Create a free account.
+
+Generate an API key from your account dashboard.
+
+2. Tools You Can Use
+Frontend: HTML, CSS, JavaScript (Vanilla JS or any framework like React is allowed).
+
+API: OpenWeatherMap (Current Weather Data API endpoint).
+
+3. App Requirements
+Your weather app must:
+
+Have a search bar to input city names.
+
+Fetch current weather data using the OpenWeather API.
+
+Display the following information:
+
+City name data.name
+
+
+Temperature (°C or °F)
+data.main.temp
+
+Weather condition (e.g., Clear, Rain, Snow)
+data.weather[0].main
+
+Humidity
+data.main.humidity
+
+Wind Speed
+data.wind.speed
+
+Weather icon (provided by API)
+data.weather[0].icon
+
+Handle invalid city names (e.g., show a message like "City not found").
+
+Use CSS to style your app and make it visually appealing.
+
+Be responsive (works on desktop and mobile).
+
+4. Bonus Features (Optional)
+Show a 5-day forecast.
+
+🧪 Sample API Call
+
+GET https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
+Parameters:
+
+q: City name
+
+appid: Your API key
+
+units: Use metric for Celsius or imperial for Fahrenheit
+
+🗂️ Project Structure Example
+weather-app/
+│
+├── index.html
+├── style.css
+└── script.js
+📌 Explanation for Students
+You're going to create a small but powerful app that uses real data from a live API. This project will help you learn and practice:
+
+Working with APIs using fetch()
+
+Asynchronous programming in JavaScript
+
+Basic error handling
+
+DOM manipulation 
+
+Creating a responsive UI using CSS
+
+
+✅ Submission Guidelines
+Submit your project folder (or GitHub repo link).
+
+Include a README.md with:
+
+Brief description of the app
+
+How to run it
+
+Screenshots  -->

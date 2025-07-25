@@ -1,49 +1,119 @@
-// How would you flatten a deeply nested array (e.g., [1, [2, [3, [4]], 5]]) to a single array using recursion or a built-in method?
+// 1. Flatten a deeply nested array using recursion:
+function flatten(arr) {
+    return arr.reduce((acc, val) => 
+        Array.isArray(val) ? acc.concat(flatten(val)) : acc.concat(val), []);
+}
+// Example: flatten([1, [2, [3, [4]], 5]]) // [1,2,3,4,5]
 
-// Given an array of numbers, how do you remove all duplicate values without using Set?
+// 2. Remove duplicates without Set:
+function removeDuplicates(arr) {
+    const result = [];
+    arr.forEach(item => {
+        if (result.indexOf(item) === -1) result.push(item);
+    });
+    return result;
+}
 
-// What will be the output of the following?
-
+// 3. Output of:
 // const a = [1, 2, 3];
 // const b = a;
 // b.push(4);
-// console.log(a); // ?
+// console.log(a); // [1,2,3,4]
+// Because b and a reference the same array.
 
-// How would you find the second largest number in an array like [10, 5, 8, 1, 9] without sorting?
+// 4. Find second largest number without sorting:
+function secondLargest(arr) {
+    let max = -Infinity, second = -Infinity;
+    arr.forEach(num => {
+        if (num > max) {
+            second = max;
+            max = num;
+        } else if (num > second && num < max) {
+            second = num;
+        }
+    });
+    return second;
+}
 
-// How do you count the number of occurrences of each element in an array?
-// Example: [1, 2, 2, 3, 1, 1] → {1: 3, 2: 2, 3: 1}
+// 5. Count occurrences of each element:
+function countOccurrences(arr) {
+    return arr.reduce((acc, val) => {
+        acc[val] = (acc[val] || 0) + 1;
+        return acc;
+    }, {});
+}
+// Example: countOccurrences([1,2,2,3,1,1]) // {1:3,2:2,3:1}
 
-// Write a custom implementation of the .map() method (polyfill).
+// 6. Custom .map() polyfill:
+Array.prototype.myMap = function(callback) {
+    const result = [];
+    for(let i=0; i<this.length; i++) {
+        result.push(callback(this[i], i, this));
+    }
+    return result;
+}
 
+// 7. Sort array of objects by multiple properties:
+function multiSort(arr) {
+    return arr.sort((a, b) => {
+        if (a.name === b.name) return a.age - b.age;
+        return a.name.localeCompare(b.name);
+    });
+}
+// Example: multiSort([{name:"John",age:30},{name:"Alice",age:25},{name:"John",age:22}])
 
-// How do you sort an array of objects by multiple properties?
-// Example: [{name: "John", age: 30}, {name: "Alice", age: 25}, {name: "John", age: 22}]
+// 8. Filter prime numbers:
+function isPrime(n) {
+    if (n < 2) return false;
+    for(let i=2; i<=Math.sqrt(n); i++) {
+        if(n % i === 0) return false;
+    }
+    return true;
+}
+function filterPrimes(arr) {
+    return arr.filter(isPrime);
+}
 
-// Sort by name (alphabetical), then age (ascending)
-
-// Given an array of numbers, return a new array containing only the elements that are prime numbers.
-
-// What will this code output and why?
-
-// const arr = [1, 2, 3];
+// 9. Output of:
+// const arr = [1,2,3];
 // arr.length = 0;
-// console.log(arr[0]); // ?
-// What’s the difference between Array.prototype.forEach and Array.prototype.map in terms of return value and use-case?
+// console.log(arr[0]); // undefined
+// Because the array is emptied.
 
-// What is the result of this?
+// 10. Difference between forEach and map:
+// forEach executes a function for each element, returns undefined. map returns a new array with transformed elements.
 
-// const a = [1, 2, 3];
-// const b = a.slice(0, 2);
+// 11. Result of:
+// const a = [1,2,3];
+// const b = a.slice(0,2);
 // b[0] = 100;
-// console.log(a); // ?
-// How do you find all pairs of elements in an array whose sum equals a target number?
-// Example: [1, 2, 3, 4, 5], target = 6 → [[1,5], [2,4]]
+// console.log(a); // [1,2,3]
+// Because slice returns a shallow copy.
 
-// How would you chunk an array into groups of N elements?
-// Example: [1,2,3,4,5,6], N = 2 → [[1,2], [3,4], [5,6]]
+// 12. Find all pairs whose sum equals target:
+function findPairs(arr, target) {
+    const pairs = [];
+    const seen = new Set();
+    arr.forEach(num => {
+        const complement = target - num;
+        if (seen.has(complement)) pairs.push([complement, num]);
+        seen.add(num);
+    });
+    return pairs;
+}
 
-// Explain what happens in this reduce expression:
+// 13. Chunk array into groups of N elements:
+function chunk(arr, n) {
+    const result = [];
+    for(let i=0; i<arr.length; i+=n) {
+        result.push(arr.slice(i, i+n));
+    }
+    return result;
+}
 
-// [1, 2, 3, 4].reduce((acc, curr) => acc + curr, 0)
-// What is the time complexity of Array.prototype.splice() in the worst case, and why?
+// 14. Reduce expression explanation:
+// [1,2,3,4].reduce((acc, curr) => acc + curr, 0)
+// Sums all elements, starting from 0. Returns 10.
+
+// 15. Time complexity of splice():
+// O(n) in worst case, because elements after the splice point may need to be shifted.
