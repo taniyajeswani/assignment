@@ -14,7 +14,7 @@ margin: 10px;
     margin: 40px;
     border:4px solid rgb(10, 0, 2);
     padding: 4px;
-    background-image: url(top.jpeg);
+    background-image: url(Imagew/top.jpeg);
    border-radius: 20px;
    
     
@@ -27,7 +27,7 @@ margin: 10px;
     
 }
 .displayer{
-    background-image: url(back.jpeg);
+    background-image: url(Imagew/back.jpeg);
     /* background-repeat: no-repeat; */
     background-size: cover;
     border-radius: 30px;
